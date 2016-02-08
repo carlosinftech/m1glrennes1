@@ -1,0 +1,43 @@
+/*************************************/
+/* 10Clients, 10 places disponibles  */
+/* dans la salle                     */
+/*************************************/
+
+Thread-1: achete un ticket, reste : 9 ticket
+Thread-5: achete un ticket, reste : 8 ticket
+Thread-4: achete un ticket, reste : 7 ticket
+Thread-3: achete un ticket, reste : 6 ticket
+Thread-2: achete un ticket, reste : 5 ticket
+Thread-8: achete un ticket, reste : 4 ticket
+Thread-7: achete un ticket, reste : 3 ticket
+Thread-6: achete un ticket, reste : 2 ticket
+Thread-11: achete un ticket, reste : 1 ticket
+Thread-10: achete un ticket, reste : 0 ticket
+La seance pour Star Wars commence
+
+La salle ouvre !
+
+Thread-10 est entré dans la salle
+Thread-11 est entré dans la salle
+Thread-6 est entré dans la salle
+Thread-7 est entré dans la salle
+Thread-8 est entré dans la salle
+Thread-2 est entré dans la salle
+Thread-3 est entré dans la salle
+Thread-4 est entré dans la salle
+Thread-5 est entré dans la salle
+Thread-1 est entré dans la salle
+La seance pour Star Wars termine
+
+La salle ferme !
+
+Thread-1: sors de la salle
+Thread-5: sors de la salle
+Thread-4: sors de la salle
+Thread-3: sors de la salle
+Thread-2: sors de la salle
+Thread-8: sors de la salle
+Thread-7: sors de la salle
+Thread-6: sors de la salle
+Thread-11: sors de la salle
+Thread-10: sors de la salle

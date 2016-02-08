@@ -1,0 +1,312 @@
+stupidon@xBox-33280:~/vsl/src$ PS1='$ '
+$ cd ../nachos/
+$ for f in test/*.s; do printf $f; done
+test/hello_world.stest/level1block.stest/level1expr.stest/level1function.stest/level1if1.stest/level1if2.stest/level1print1.stest/level1print2.stest/level1print3.stest/level1proto1.stest/level1sequence.stest/level1while1.stest/level2assign.stest/level2call2.stest/level2call.stest/level2expr.stest/level2if1.stest/level2proto.stest/level2read.stest/level3block1.stest/level3block.stest/level3tab1.stest/level3tab2.stest/level3tab3.stest/level3tab4.stest/level3tab5.stest/level4diverge.stest/level4t1.stest/level4testcarre.stest/level4testfact2.stest/level4testfact.stest/level4testhanoi.stest/level4testheap.stest/level4testtri.stest/test.s$ 
+$ for f in test/*.s; do printf "$f\n"; done
+test/hello_world.s
+test/level1block.s
+test/level1expr.s
+test/level1function.s
+test/level1if1.s
+test/level1if2.s
+test/level1print1.s
+test/level1print2.s
+test/level1print3.s
+test/level1proto1.s
+test/level1sequence.s
+test/level1while1.s
+test/level2assign.s
+test/level2call2.s
+test/level2call.s
+test/level2expr.s
+test/level2if1.s
+test/level2proto.s
+test/level2read.s
+test/level3block1.s
+test/level3block.s
+test/level3tab1.s
+test/level3tab2.s
+test/level3tab3.s
+test/level3tab4.s
+test/level3tab5.s
+test/level4diverge.s
+test/level4t1.s
+test/level4testcarre.s
+test/level4testfact2.s
+test/level4testfact.s
+test/level4testhanoi.s
+test/level4testheap.s                                                                                                                                             
+test/level4testtri.s
+test/test.s
+$ for f in test/*.s; do printf "$f\n"; ./fun $f; done
+test/hello_world.s
+Hello World
+
+Machine halting
+Cleaning up...
+test/level1block.s
+
+
+Machine halting
+Cleaning up...
+test/level1expr.s
+5+7 = 12
+5-7 = -2
+5*7 = 35
+5/7 = 0
+5+1 = 6
+5* (5+7) = 60
+5*  5+7  = 32
+
+
+Machine halting
+Cleaning up...
+test/level1function.s
+
+
+Machine halting
+Cleaning up...
+test/level1if1.s
+
+
+Machine halting
+Cleaning up...
+test/level1if2.s
+
+
+Machine halting
+Cleaning up...
+test/level1print1.s
+Hello
+
+Machine halting
+Cleaning up...
+test/level1print2.s
+1
+
+Machine halting
+Cleaning up...
+test/level1print3.s
+1 = 1
+
+Machine halting
+Cleaning up...
+test/level1proto1.s
+
+
+Machine halting
+Cleaning up...
+test/level1sequence.s
+tototiti
+
+Machine halting
+Cleaning up...
+test/level1while1.s
+
+
+Machine halting
+Cleaning up...
+test/level2assign.s
+1
+y vaut 1
+
+Machine halting
+Cleaning up...
+test/level2call2.s
+1+3 = 4
+
+Machine halting
+Cleaning up...
+test/level2call.s
+one() = 1
+
+Machine halting
+Cleaning up...
+test/level2expr.s
+1+3 = 4
+1-3 = -2
+1*3 = 3
+1/3 = 0
+1+1 = 2
+1* (1+3) = 4
+1*  1+3  = 4
+5+2 = 7
+5-2 = 3
+5*2 = 10
+5/2 = 2
+5+1 = 6
+5* (5+2) = 35
+5*  5+2  = 27
+
+
+Machine halting
+Cleaning up...
+test/level2if1.s
+2 est different de 1
+1 est different de 2
+1 est egal a 1
+
+
+Machine halting
+Cleaning up...
+test/level2proto.s
+1+3 = 4
+
+Machine halting
+Cleaning up...
+test/level2read.s
+2
+Le nombre lu est 2
+
+Machine halting
+Cleaning up...
+test/level3block1.s
+100
+
+Machine halting
+Cleaning up...
+test/level3block.s
+2
+5
+y a l'interieur vaut 5, mais a l'exterieur du bloc il vaut 2
+
+Machine halting
+Cleaning up...
+test/level3tab1.s
+000
+
+Machine halting
+Cleaning up...
+test/level3tab2.s
+1
+2
+3
+t[0] = 1
+t[1] = 2
+t[2] = 3
+
+Machine halting
+Cleaning up...
+test/level3tab3.s
+2
+3
+4
+5
+6
+7
+8
+9
+t[0] = 2
+t[1] = 3
+t[2] = 4
+t[3] = 5
+t[4] = 6
+t[5] = 7
+t[6] = 8
+t[7] = 9
+
+
+Machine halting
+Cleaning up...
+test/level3tab4.s
+../lib/sys.o: In function `__start':
+(.sys+0x0): undefined reference to `main'
+Copy: couldn't open Unix file test/level3tab4
+test/level3tab5.s
+../lib/sys.o: In function `__start':
+(.sys+0x0): undefined reference to `main'
+Copy: couldn't open Unix file test/level3tab5
+test/level4diverge.s
+Toto
+
+^C
+Cleaning up...
+
+$ for f in test/level4t*.s; do printf "$f\n"; ./fun $f; done
+test/level4t1.s
+Et voila: 0001
+
+Machine halting
+Cleaning up...
+test/level4testcarre.s
+
+5^2 + 4^2 + 3^2 + 2^2 + 1^2 = 55
+
+
+Machine halting
+Cleaning up...
+test/level4testfact2.s
+f(0) = 1
+f(1) = 1
+f(2) = 2
+f(3) = 6
+f(4) = 24
+f(5) = 120
+f(6) = 720
+f(7) = 5040
+f(8) = 40320
+f(9) = 362880
+f(10) = 3628800
+
+
+Machine halting
+Cleaning up...
+test/level4testfact.s
+f(0) = 1
+f(1) = 1
+f(2) = 2
+f(3) = 6
+f(4) = 24
+f(5) = 120
+f(6) = 720
+f(7) = 5040
+f(8) = 40320
+f(9) = 362880
+f(10) = 3628800
+
+
+Machine halting
+Cleaning up...
+test/level4testhanoi.s
+
+ Hanoi avec 3 disques
+
+Deplacer un disque de 1 a 3
+Deplacer un disque de 1 a 2
+Deplacer un disque de 3 a 2
+Deplacer un disque de 1 a 3
+Deplacer un disque de 2 a 1
+Deplacer un disque de 2 a 3
+Deplacer un disque de 1 a 3
+
+
+Hanoi avec 4 disques
+
+Deplacer un disque de 1 a 2
+Deplacer un disque de 1 a 3
+Deplacer un disque de 2 a 3
+Deplacer un disque de 1 a 2
+Deplacer un disque de 3 a 1
+Deplacer un disque de 3 a 2
+Deplacer un disque de 1 a 2
+Deplacer un disque de 1 a 3
+Deplacer un disque de 2 a 3
+Deplacer un disque de 2 a 1
+Deplacer un disque de 3 a 1
+Deplacer un disque de 2 a 3
+Deplacer un disque de 1 a 2
+Deplacer un disque de 1 a 3
+Deplacer un disque de 2 a 3
+
+
+Machine halting
+Cleaning up...
+test/level4testheap.s
+../lib/sys.o: In function `__start':
+(.sys+0x0): undefined reference to `main'
+Copy: couldn't open Unix file test/level4testheap
+test/level4testtri.s
+../lib/sys.o: In function `__start':
+(.sys+0x0): undefined reference to `main'
+Copy: couldn't open Unix file test/level4testtri
+$ 

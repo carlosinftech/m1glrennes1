@@ -1,0 +1,217 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{url} 
+\usepackage[francais]{babel}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png.jpeg}
+
+
+
+
+% ------------------------
+% DEBUT Modifier
+
+\title{Rapport Travails Pratiques basse de donnees}
+\author{Carlos Perez}
+
+% FIN Modifier
+% ------------------------
+
+
+
+
+
+\begin{document}
+
+\maketitle 
+\tableofcontents
+\date{03 decembre 2015}
+
+
+
+% ------------------------
+% DEBUT Modifier
+
+\section{Interprétation du plan d’exécution}
+\label{laSectionUne}
+
+Cette section parle de l,evaluation des plans d'execution pour les requetes
+du point 1 du TP.  \ref{laSection}. 
+
+\subsection{1.1}
+\label{laSousSectionUne}
+
+\textbf{INDEX UNIQUE SCAN:}\verb!SELECT annee_naissance from artiste where id = 37;! ;
+\paragraph{} Nombre de pages accedes en RAM 2.
+\paragraph{ Plan d'execution}
+\verb!----------------------------------------------------!
+\verb!| Id  | Operation                   | Name         |!
+\verb!----------------------------------------------------!
+\verb!|   0 | SELECT STATEMENT            |              |!
+\verb!|   1 |  TABLE ACCESS BY INDEX ROWID| ARTISTE      |!
+\verb!|   2 |   INDEX UNIQUE SCAN         | SYS_C0098771 |!
+\verb!----------------------------------------------------!;
+
+\subsection{1.2}
+\begin{itemize} 
+\item \textbf{INDEX UNIQUE SCAN:} La basse de donnèes cherche la valeur dans l'index
+et arrete quand la valeur a ete trouve parce que ce ne pas possible d'avoir plus 
+d'un valeur.
+\item \textbf{TABLE ACCESS INDEX BY ROWID:} On utilisse un index pour acceder directement
+au ressources de la basse de données.
+\end{itemize} 
+ 
+
+\subsection{1.3}
+Requete:
+\verb!SELECT annee_naissance from artiste where id > -1;! 
+\paragraph{} Nombre de pages accedes en RAM 7.
+
+\paragraph{ Plan d'execution}
+
+-------------------------------------
+| Id  | Operation         | Name    |
+-------------------------------------
+|   0 | SELECT STATEMENT  |         |
+|   1 |  TABLE ACCESS FULL| ARTISTE |
+-------------------------------------
+
+\subsection{1.4}
+
+\begin{itemize} 
+\item \textbf{TABLE ACCESS FULL:} La basse de donnèes lisse tous les registres
+de la table. Dans ce cas le probleme c'est que la requete n'est pas selective,
+en d'autres mots, la requete contient la majoritè des valeurs de la table. C'est 
+pour cette raison que l'optimisseur a realis'e un scan complet de la table meme
+si on utilise un indice dans la requete. 
+\end{itemize} 
+
+\subsection{1.5}
+\paragraph{} Il me semble raisonnable la choix du methode parce qu'utiliser l'index
+ne donnerai aucune avantage dans ce cas specifique. 
+
+
+\subsection{1.6}Requete:
+
+\verb!SELECT nom,prenom from artiste inner join (SELECT id_acteur from role inner join!   
+\verb!(SELECT film.id AS idfilm from film inner join (SELECT id from artiste where nom = 'Tarantino')! 
+\verb!realisateur on film.id_realisateur = realisateur.id) realisateur! 
+\verb!on role.ID_FILM = realisateur.idfilm) filmes on artiste.id = filmes.id_acteur;! 
+
+
+
+\verb!-----------------------------------------------------!
+\verb!| Id  | Operation                    | Name         |!
+\verb!-----------------------------------------------------!
+\verb!|   0 | SELECT STATEMENT             |              |!
+\verb!|   1 |  NESTED LOOPS                |              |!
+\verb!|   2 |   NESTED LOOPS               |              |!
+\verb!|   3 |    NESTED LOOPS              |              |!
+\verb!|   4 |     HASH JOIN                |              |!
+\verb!|   5 |      TABLE ACCESS FULL       | ARTISTE      |!
+\verb!|   6 |      TABLE ACCESS FULL       | FILM         |!
+\verb!|   7 |     INDEX RANGE SCAN         | SYS_C0098788 |!
+\verb!|   8 |    INDEX UNIQUE SCAN         | SYS_C0098771 |!
+\verb!|   9 |   TABLE ACCESS BY INDEX ROWID| ARTISTE      |!
+\verb!-----------------------------------------------------!
+
+\subsection{1.7}
+
+\begin{itemize} 
+\item \textbf{INDEX RANGE SCAN} La basse de donnèes cherche les valeurs dans un rangue
+possible dans l'index. L'optimiseur utilise une structure de donnèes en arbre pour trouver 
+\item \textbf{INDEX UNIQUE SCAN} La basse de donnèes cherche la valeur dans l'index
+et arrete quand la valeur a ete trouve parce que ce ne pas possible d'avoir plus 
+d'un valeur.
+\item \textbf{HASH JOIN} L'optimiseur charge en memoire le resultat d'appliquer une
+fonction de hash a la plus petite de deux basse de donnèes disponibles. Apres il compare
+les valeurs donnees par la function contre les valeurs de la table plus grande.
+Le resultat et la disminution des access innecessaires au disque.
+
+\item \textbf{NESTED LOOP} Cette methode cree deux boucles un pour la table grande et
+l'autre pour la table petite. Le boucle interne s'execute pour chaque file de la table
+exterieure. 
+\item \textbf{TABLE ACCESS INDEX BY ROWID:} On utilisse un index pour acceder directement
+au ressources de la basse de données.
+\end{itemize} 
+
+
+\subsection{1.8}
+\paragraph{ }La solution choisie est trop efficace parce qu'elle fait seulement
+deux access complets dans une table et utilise des indices. L'access a la table artiste
+etait necessaire car 
+
+
+\section{Vues}
+
+
+\subsection{2.1}
+\label{laSousSectionDEuxUn}
+Vue:
+\verb!CREATE view artisterole as SELECT nom,prenom from artiste  inner join!
+\verb!(Select id_acteur, count(*) AS nomfilmes from role group by id_acteur) rolefilm ON ! 
+\verb!artiste.id = rolefilm.id_acteur AND rolefilm.nomfilmes > 3;! 
+
+\subsection{2.2}
+\label{laSousSectionDeuxDeux}
+Requete:
+\verb!SSELECT * FROM artisterole;! 
+
+
+
+\section{PL/SQL}
+Dans cette section on montre les declencheurs generees et la table genere
+
+\subsection{3.1}
+Requete:
+\verb!create or replace TRIGGER trigger_artistes!
+\verb!BEFORE INSERT!
+\verb!   ON artiste!
+\verb!  FOR EACH ROW!
+   
+\verb!DECLARE!
+
+   
+\verb!BEGIN!
+
+\verb!   :new.annee_naissance := :new.annee_naissance*10;!
+   
+\verb!END;! 
+
+\subsection{3.2}Requete:
+\verb!CREATE TABLE nbupdates! 
+\verb!( chaine VARCHAR2(50),! 
+\verb!  nombre_updates INT! 
+\verb!);! 
+
+\subsection{3.3}
+
+Declencheur:
+\verb!create or replace TRIGGER trigger_nbupdates! 
+\verb!AFTER INSERT! 
+\verb!   ON artiste! 
+\verb!   FOR EACH ROW! 
+\verb!DECLARE! 
+\verb!  vupd integer;! 
+\verb!BEGIN! 
+
+\verb!   SELECT nombre_updates INTO vupd FROM nbupdates where chaine ='ARTISTES';! 
+   
+\verb!   UPDATE nbupdates! 
+\verb!   SET nombre_updates = vupd+1! 
+\verb!   WHERE chaine ='ARTISTES';! 
+\verb!   EXCEPTION! 
+\verb!   WHEN NO_DATA_FOUND THEN! 
+\verb!      dbms_output.put_line('La chaine ARTISTES n''existe pas dans la table nbupdates');! 
+\verb!   WHEN OTHERS THEN! 
+\verb!      raise_application_error(-20001,'Un erreur a ete trouvé - '||SQLCODE||' -ERROR- '||SQLERRM);! 
+
+\verb!END;! 
+
+
+
+
+\end{document}
+

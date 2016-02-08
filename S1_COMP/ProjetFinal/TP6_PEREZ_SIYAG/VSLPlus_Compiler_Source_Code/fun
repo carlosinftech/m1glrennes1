@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# run.sh: runs a compiled parser generated with ANTLR
+# exemple: ./run.sh TP1 tests/test1.ttl
+./g2java.sh VSLTreeParser.g
+./javac.sh
+FILE=$(echo $1 | rev | cut -d'/' -f1 | rev | cut -d'.' -f1)
+./run.sh VslComp $1 > /home/stupidon/vsl/nachos/test/$FILE.s

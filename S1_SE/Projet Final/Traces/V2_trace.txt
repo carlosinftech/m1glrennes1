@@ -1,0 +1,49 @@
+/*****************************************************/
+/* 10 clients, deux seances, 5 places disponible dans*/
+/* la salle. Et un stand de pop corne ou vont 50% des*/
+/* clients					     */
+/*****************************************************/
+
+Thread-2: achéte un ticket pour Star Wars seance : 0 Il reste : 4
+Thread-6: achéte un ticket pour Star Wars seance : 0 Il reste : 3
+Thread-5: achéte un ticket pour Star Wars seance : 0 Il reste : 2
+Thread-4: achéte un ticket pour Star Wars seance : 0 Il reste : 1
+Thread-5 arrive au stand de pop-corn
+Thread-10: achéte un ticket pour Star Wars seance : 0 Il reste : 0
+Thread-5 quitte le stand de pop-corn
+Thread-11: n'as pas eu sa séance et rentre chez lui
+Thread-10 arrive au stand de pop-corn
+Thread-11: rentre chez lui penaud
+Thread-3: achéte un ticket pour Star Wars seance : 1 Il reste : 4
+Thread-10 quitte le stand de pop-corn
+Thread-9: achéte un ticket pour Star Wars seance : 1 Il reste : 3
+Thread-3 arrive au stand de pop-corn
+Thread-7: n'as pas eu sa séance et rentre chez lui
+Thread-3 quitte le stand de pop-corn
+Thread-8: n'as pas eu sa séance et rentre chez lui
+Thread-7: rentre chez lui penaud
+Thread-8: rentre chez lui penaud
+La seance 0 pour Star Wars Commence
+
+Thread-10 est entré dans la salle
+Thread-5 est entré dans la salle
+Thread-4 est entré dans la salle
+Thread-6 est entré dans la salle
+Thread-2 est entré dans la salle
+
+La seance 0 pour Star Wars Termine
+
+Thread-2: sors de la salle
+Thread-6: sors de la salle
+Thread-4: sors de la salle
+Thread-5: sors de la salle
+Thread-10: sors de la salle
+La seance 1 pour Star Wars Commence
+
+Thread-3 est entré dans la salle
+Thread-9 est entré dans la salle
+
+La seance 1 pour Star Wars Termine
+
+Thread-9: sors de la salle
+Thread-3: sors de la salle

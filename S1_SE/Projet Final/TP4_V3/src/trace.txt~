@@ -1,0 +1,90 @@
+/************************************************/
+/*Execution avec:			   	*/
+/* 		 deux Salles de projection 	*/
+/*		 trois seances		   	*/
+/*		 dix Client		    	*/
+/*		 quatre place par salle     	*/
+/* Les clients arrivent au lancement de cinema  */	
+/************************************************/
+
+La seance 0 pour Star Wars commence dans la salle : 0
+
+La seance 1 pour Titanic commence dans la salle : 1
+
+Thread-9: arrive a la billeterie
+guichet Thread-2 s'occupe du client Thread-9
+Thread-2: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 3
+Thread-14: arrive a la billeterie
+guichet Thread-1 s'occupe du client Thread-14
+Thread-1: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 3
+Thread-10: arrive a la billeterie
+guichet Thread-0 s'occupe du client Thread-10
+Thread-0: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 2
+Thread-18: arrive a la billeterie
+guichet Thread-1 s'occupe du client Thread-18
+Thread-1: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 2
+Thread-16: arrive a la billeterie
+Thread-15: arrive a la billeterie
+Thread-14: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 2
+guichet Thread-2 s'occupe du client Thread-16
+Thread-14: arrive au stand de pop corn
+Thread-2: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 1
+Thread-12: arrive a la billeterie
+Thread-13: arrive a la billeterie
+Thread-9: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 2
+Thread-11: arrive a la billeterie
+Thread-9: arrive au stand de pop corn
+guichet Thread-2 s'occupe du client Thread-15
+Thread-2: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 0
+guichet Thread-2 s'occupe du client Thread-12
+Thread-15: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 0
+Thread-2: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 1
+Thread-15 est entré dans la salle0
+Thread-16: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 0
+Thread-9: quitte le stand de pop corn
+Thread-9 est entré dans la salle1
+guichet Thread-2 s'occupe du client Thread-13
+Thread-14: quitte le stand de pop corn
+Thread-2: achéte un ticket pour Star Wars seance : 2 Salle : 0 Il reste : 3
+Thread-16: arrive au stand de pop corn
+Thread-14 est entré dans la salle0
+Thread-16: quitte le stand de pop corn
+guichet Thread-2 s'occupe du client Thread-11
+Thread-16 est entré dans la salle0
+Thread-2: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 0
+Thread-18: achéte un ticket pour Star Wars seance : 0 Salle : 0 Il reste : 0
+Thread-17: arrive a la billeterie
+Thread-10: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 0
+guichet Thread-0 s'occupe du client Thread-17
+Thread-18 est entré dans la salle0
+Thread-0: n'as pas eu sa séance et rentre chez lui
+Thread-10 est entré dans la salle1
+Thread-13: achéte un ticket pour Star Wars seance : 2 Salle : 0 Il reste : 3
+Thread-12: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 0
+Thread-17: rentre chez lui penaud
+Thread-11: achéte un ticket pour Titanic seance : 1 Salle : 1 Il reste : 0
+Thread-12 est entré dans la salle1
+Thread-11: arrive au stand de pop corn
+Thread-11: quitte le stand de pop corn
+Thread-11 est entré dans la salle1
+
+La seance 0 pour Star Wars termine dans la salle : 0
+
+Thread-18: sors de la salle 0
+Thread-16: sors de la salle 0
+Thread-14: sors de la salle 0
+Thread-15: sors de la salle 0
+La seance 2 pour Star Wars commence dans la salle : 0
+
+Thread-13 est entré dans la salle0
+
+La seance 1 pour Titanic termine dans la salle : 1
+
+Thread-11: sors de la salle 1
+Thread-12: sors de la salle 1
+Thread-10: sors de la salle 1
+Thread-9: sors de la salle 1
+
+La seance 2 pour Star Wars termine dans la salle : 0
+
+Thread-13: sors de la salle 0

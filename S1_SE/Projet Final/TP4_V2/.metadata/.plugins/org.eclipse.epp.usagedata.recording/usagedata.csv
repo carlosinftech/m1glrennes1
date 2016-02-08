@@ -1,0 +1,16 @@
+what,kind,bundleId,bundleVersion,description,time
+stopped,bundle,org.eclipse.xtend.core,2.7.2.v201409160908,"org.eclipse.xtend.core",1448885323216
+stopped,bundle,org.eclipse.xtext.xbase.ui,2.7.2.v201409160908,"org.eclipse.xtext.xbase.ui",1448885323217
+stopped,bundle,org.eclipse.xtext.xtext.ui,2.7.2.v201409160908,"org.eclipse.xtext.xtext.ui",1448885323217
+stopped,bundle,org.eclipse.pde.ui,3.6.100.v20120103_r372,"org.eclipse.pde.ui",1448885323217
+stopped,bundle,org.eclipse.ui.cheatsheets,3.4.100.v20110425,"org.eclipse.ui.cheatsheets",1448885323237
+stopped,bundle,org.eclipse.help.ui,3.5.101.r37_20110819,"org.eclipse.help.ui",1448885323241
+stopped,bundle,org.eclipse.help.webapp,3.6.1.r37_20110929,"org.eclipse.help.webapp",1448885323261
+stopped,bundle,org.eclipse.epp.mpc.ui,1.1.1.I20110907-0947,"org.eclipse.epp.mpc.ui",1448885323261
+stopped,bundle,org.eclipse.epp.usagedata.ui,1.3.1.R201106061540,"org.eclipse.epp.usagedata.ui",1448885323261
+stopped,bundle,org.eclipse.ui.intro.universal,3.2.500.v20110510,"org.eclipse.ui.intro.universal",1448885323262
+stopped,bundle,org.eclipse.ui.intro,3.4.100.v20110425,"org.eclipse.ui.intro",1448885323262
+stopped,bundle,org.eclipse.help.base,3.6.2.v201202080800,"org.eclipse.help.base",1448885323262
+stopped,bundle,org.eclipse.equinox.http.jetty,2.0.100.v20110502,"org.eclipse.equinox.http.jetty",1448885323268
+stopped,bundle,com.google.appengine.eclipse.datatools,3.2.2.v201303261859-rel-r37,"com.google.appengine.eclipse.datatools",1448885323268
+stopped,bundle,com.google.appengine.eclipse.webtools,3.2.2.v201303261859-rel-r37,"com.google.appengine.eclipse.webtools",1448885323272
